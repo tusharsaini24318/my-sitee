@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe0ec, #e0f7f5);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 850px;
+  margin: 70px auto;
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  animation: fade 1.5s ease;
+}
+
+.rose {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  text-align: center;
+  color: #d6336c;
+}
+
+h1 {
+  text-align: center;
+  color: #ff4d88;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.btn {
+  padding: 12px 28px;
+  border: none;
+  background: #ff4d88;
+  color: white;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 25px;
+  color: #ff4d88;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@keyframes fade {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
