@@ -1,48 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Rose Day Anvi 🌹</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dear Anvi 💖</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+.page{
+  display:none;
+  padding:22px;
+  max-width:800px;
+}
+
+.page.active{
+  display:block;
+}
+
+button{
+  padding:14px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.next-btn{
+  background:#ff4d6d;
+  color:white;
+  margin-top:30px;
+  box-shadow:0 10px 22px rgba(0,0,0,0.25);
+}
+
+.next-btn:hover{
+  transform:scale(1.08);
+}
+
+.yes{
+  background:#4CAF50;
+  color:white;
+  margin:15px;
+}
+
+.no{
+  background:#ff6b6b;
+  color:white;
+  margin:15px;
+}
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-100vh);opacity:0;}
+}
+
+.final-img{
+  width:260px;
+  max-width:90%;
+  margin:20px auto 0;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.3);
+}
+
+.highlight-text{
+  margin-top:30px;
+  font-size:30px;
+  font-weight:700;
+  color:#ff2f6e;
+  text-shadow:0 4px 14px rgba(0,0,0,0.3);
+  font-family:'Comic Sans MS','Poppins',cursive;
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
-  <h2 class="rose">🌹 Happy Rose Day 🌹</h2>
-  <h1>Anvi</h1>
-
-  <p>
-    Kuch log life me achanak aate hain, bina koi planning ke,
-    aur phir dheere dheere sab kuch meaningful bana dete hain.
-    Tumhari presence bhi waisi hi hai — soft, calm,
-    aur oddly comforting.
-  </p>
-
-  <p>
-    Ye rose sirf ek flower nahi hai. Ye appreciation ka symbol hai.
-    Tumhari kindness, tumhari simplicity,
-    aur tumhara way of handling things quietly —
-    ye sab rare qualities hain.
-  </p>
-
-  <p>
-    Agar kabhi lage ki tum enough nahi ho,
-    toh ye yaad rakhna:
-    tumhara effort, tumhara patience,
-    aur tumhari growth already kaafi kuch keh chuki hai.
-    Har koi loud nahi hota, par strong zaroor hota hai.
-  </p>
-
-  <button class="btn" onclick="startExperience()">Tap to Begin 💗</button>
-  <br><br>
-  <a href="page2.html" class="link">Continue ➜</a>
-</div>
-
+<!-- 🎵 MUSIC -->
 <audio id="bgMusic" loop>
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
-<script src="script.js"></script>
+<!-- 🌹 PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>💖 Dear Anvi 💖</h1><br>
+
+  <p>
+    Happy Rose Day 🌹  
+
+    Shayad tumhe andaza bhi na ho,
+    par tumhari ek choti si smile
+    kisi ke poore din ko better bana sakti hai.  
+
+    Ye rose sirf ek flower nahi,
+    balki un feelings ka symbol hai
+    jo main har baar words me
+    perfectly express nahi kar paata.  
+
+    Tumhari baatein,
+    tumhara thoda sa attitude,
+    aur bina try kiye hi cute lag jaana —
+    sab kuch bohot naturally aata hai tumhe.  
+
+    Ye page bas ek wish nahi,
+    ek choti si koshish hai
+    tumhe ye batane ki
+    ki tum sirf notice nahi hoti,
+    balki genuinely special ho 🌸
+  </p>
+
+  <button class="next-btn" onclick="goToGame()">Next 👉</button>
+</div>
+
+<!-- 💖 PAGE 2 GAME -->
+<div class="page" id="page2">
+  <h2>Ek honest sawaal hai 👉👈</h2><br>
+  <h1>Do you like me? 💖</h1><br>
+
+  <button class="yes" id="yesBtn" onclick="yesClicked()">YES</button>
+  <button class="no" id="noBtn" onclick="noClicked()">NO</button>
+
+  <p id="warning" style="margin-top:20px;"></p>
+</div>
+
+<!-- 🎉 FINAL PAGE -->
+<div class="page" id="page3">
+  <h1>YAYYYYY 😭💖</h1>
+
+  <p style="font-size:16px;line-height:1.8;margin-top:18px;">
+    Sach bolu toh is page ko likhte waqt
+    thoda sa nervous bhi hoon
+    aur thoda sa bohot zyada khush bhi.  
+
+    Tumhara YES sirf ek word nahi tha,
+    balki ek aisi feeling thi
+    jo bina permission liye
+    seedha dil me aa ke baith gayi.  
+
+    Main perfect nahi hoon,
+    meri kamiyan hain,
+    aur main har cheez me best bhi nahi hoon,
+    par jo bhi feel karta hoon
+    wo bilkul real hota hai.  
+
+    Tumhari presence meri life me
+    bina noise ke bhi kaafi loud hai,
+    achhe way me.
+    Tumhara naam yaad aate hi
+    mood thoda halka ho jaata hai.  
+
+    Agar kabhi tum confuse ho,
+    thak jao,
+    ya bas chup rehna ho,
+    toh itna yaad rakhna —
+    kahin ek banda hai
+    jo tumhari ek smile ke liye bhi
+    bina kisi reason ke khush ho jaata hai.  
+
+    Ye koi promise nahi,
+    bas ek honest moment hai,
+    jo dil se nikla hai
+    bina kisi pressure ke 💗
+  </p>
+
+  <h2 class="highlight-text">🤟🏻 umahhhhhhhh pgluuuu</h2>
+
+  <img src="kiss-anime.png" class="final-img" alt="cute anime moment">
+</div>
+
+<script>
+let noCount=0;
+
+function goToGame(){
+  page1.classList.remove("active");
+  page2.classList.add("active");
+  bgMusic.play();
+}
+
+function noClicked(){
+  noCount++;
+  yesBtn.style.transform=`scale(${1+noCount*0.15})`;
+  noBtn.style.transform=`scale(${1-noCount*0.05})`;
+  if(noCount>=10){
+    warning.innerText="Please say YES naaa 🥺💗";
+  }
+}
+
+function yesClicked(){
+  page2.classList.remove("active");
+  page3.classList.add("active");
+  hearts();
+}
+
+function hearts(){
+  setInterval(()=>{
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💖";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=Math.random()*24+16+"px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+  },260);
+}
+</script>
+
 </body>
 </html>
